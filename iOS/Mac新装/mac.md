@@ -42,6 +42,18 @@ xcode-select --install
 打开`Homebrew`的官网，找到安装命令即可：
  - https://brew.sh/
 
+安装命令执行完毕后，注意看输出，大概需要根据输出再执行几个命令，进行终端的环境配置。例如
+```sh
+# 下面只是示例，具体还是看安装brew的输出提示
+echo >> ~/.zprofile
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+```
+
+然后，输入以下命令，验证是否安装成功：
+```sh
+brew --version
+```
 
 ### 6.Java和Android Studio
 
