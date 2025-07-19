@@ -26,7 +26,7 @@ xcode-select --install
 | 微信 | App Store |
 | `SnippetsLab`代码仓库 | App Store |
 | `CotEditor`文本编辑 | App Store |
-| `Snipaste`截图软件 | App Store |
+| `Snipaste`截图软件 | `https://zh.snipaste.com/` |
 | `VLC`视频播放 | `https://www.videolan.org/vlc/` |
 | NTFS for Mac | 先去希捷硬盘的官网，再找下载链接 |
 | Sourcetree | `https://www.sourcetreeapp.com/`(\n 要先安装好`Xcode`和命令行工具(`xcode-select --install`) |
