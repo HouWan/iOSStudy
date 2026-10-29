@@ -5,7 +5,7 @@
 安装Android Studio，并配置一些必配的工具包，例如`build-tools`、`cmake`、`mdline-tools`等
 
 <p align="center">
-  <img src="./image/0001.webp" width="500" alt="HouWan">
+  <img src="./other/android_godot研究/image/0001.webp" width="500" alt="HouWan">
 </p>
 
 
