@@ -1,0 +1,7 @@
+
+
+actor
+@MainActor
+
+Sendable
+

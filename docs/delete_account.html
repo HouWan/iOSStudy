@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Account - AlterU</title>
+    <style>
+        /* 深色主题底层配色 */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0d1117; /* 深灰偏黑背景 */
+            color: #c9d1d9; /* 柔和的前景文字颜色 */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* 居中核心卡片容器 */
+        .container {
+            width: 100%;
+            max-width: 440px;
+            padding: 40px 30px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .title {
+            font-size: 20px;
+            font-weight: 500;
+            color: #f0f6fc;
+            margin-bottom: 24px;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            color: #8b949e;
+            line-height: 1.5;
+            margin-bottom: 32px;
+        }
+
+        /* 表单样式 */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+
+        .input-group {
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            font-size: 12px;
+            color: #8b949e;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        input[type="email"] {
+            width: 100%;
+            padding: 12px 16px;
+            box-sizing: border-box;
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            color: #ffffff;
+            font-size: 16px;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            outline: none;
+        }
+
+        input[type="email"]:focus {
+            border-color: #58a6ff;
+            box-shadow: 0 0 0 3px rgba(56, 139, 253, 0.15);
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #238636; /* 稳重的安全绿色，暗示账号删除等敏感操作 */
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        button:hover {
+            background-color: #2ea043;
+        }
+
+        /* 提交成功后的状态提示 */
+        .success-message {
+            display: none;
+            background-color: rgba(56, 139, 253, 0.1);
+            border: 1px solid rgba(56, 139, 253, 0.3);
+            border-radius: 8px;
+            padding: 16px;
+            color: #58a6ff;
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 40px;
+            text-align: left;
+        }
+
+        /* 分割线与说明信息 */
+        hr {
+            border: 0;
+            height: 1px;
+            background-color: #21262d;
+            margin-bottom: 32px;
+        }
+
+        .info-section {
+            text-align: left;
+            font-size: 13px;
+            color: #8b949e;
+            line-height: 1.6;
+        }
+
+        .info-title {
+            font-weight: 600;
+            color: #c9d1d9;
+            margin-bottom: 6px;
+        }
+
+        .info-path {
+            background-color: #161b22;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-family: monospace;
+            color: #ff7b72;
+            display: inline-block;
+            margin: 4px 0 16px 0;
+        }
+
+        .links {
+            margin-top: 24px;
+            text-align: center;
+        }
+
+        .links a {
+            color: #58a6ff;
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- 头部 LOGO 与标题 -->
+        <div class="logo">AlterU</div>
+        <div class="title">Delete Your Account</div>
+        <div class="subtitle">Please enter your registered email address below to initiate the account and data deletion process.</div>
+
+        <!-- 成功提示框（默认隐藏，点击提交后触发显示） -->
+        <div id="successBox" class="success-message">
+            ✓ <strong>Request Submitted.</strong><br>
+            A confirmation email has been sent to your address. Please check your inbox and follow the instructions to confirm the deletion.
+        </div>
+
+        <!-- 表单提交部分 -->
+        <form id="deleteForm" onsubmit="handleSubmit(event)">
+            <div class="input-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="example@domain.com" required>
+            </div>
+            <button type="submit">Request Deletion</button>
+        </form>
+
+        <hr>
+
+        <!-- 底部说明信息与协议链接 -->
+        <div class="info-section">
+            <div class="info-title">In-App Deletion Pathway:</div>
+            <p style="margin: 0;">You can also delete your account instantly from within the mobile app at any time by navigating to:</p>
+            <div class="info-path">Settings &gt; Delete Account</div>
+
+            <p style="margin: 0;">Once confirmed, all your personal identities, interaction history, and related metadata will be permanently erased from our live servers.</p>
+        </div>
+
+        <div class="links">
+            <a href="https://static.wdabuliu.com/prod/ag/1780652668635/alteru_policy_dark.html" target="_blank">Privacy Policy</a>
+        </div>
+    </div>
+
+    <script>
+        function handleSubmit(event) {
+            // 阻止表单默认的刷新提交行为
+            event.preventDefault();
+            
+            const emailInput = document.getElementById('email').value;
+            
+            // 💡 独立开发小提示：
+            // 如果后续你们打算让网页真正生效，可以在这里加入 fetch 逻辑，将 email 传给你们的自建后端：
+            /*
+            fetch('https://api.yourdomain.com/v1/auth/request-delete', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email: emailInput })
+            });
+            */
+
+            // 隐藏输入表单，显示成功提示信息
+            document.getElementById('deleteForm').style.display = 'none';
+            document.getElementById('successBox').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
